@@ -10,3 +10,5 @@ npm install
 ```
 node server.js
 ```
+# Viewing
+Once the server is started, go to 127.0.0.1:8080/ to view
