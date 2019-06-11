@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,400,700">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <script src="/js/base.js"></script>
+    <title>Seafood | Home</title>
+    <style>
+        .landing-image {
+            width: 100%;
+            padding-top: 30%;
+            min-height: 400px;
+            background-image: url("/images/background1.png");
+            background-size: cover;
+            position: relative;
+        }
+        .landing-image-info {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+        .landing-image-info-title {
+            font-size: calc(45px + 5vw);
+            color: white;
+            font-weight: 700;
+        }
+        .landing-image-info-subtitle {
+            font-size: calc(15px + 0.5vw);
+            color: white;
+            font-weight: 200;
+        }
+        .call-to-action {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35%;
+            min-width: 200px;
+            text-align: center;
+            padding: 15px 0px;
+            border: 2px solid white;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: calc(15px + 0.5vw);
+            background-color: rgba(0,0,0,0.7);
+        }
+        .call-to-action:hover {
+            background-color: rgba(255,255,255,0.7);
+            color: black;
+            border: 2px solid black;
+        }
+        .slider-view {
+            width: 100%;
+        }
+        .slider {
+            width: 50%;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            height:400px;
+            position: relative;
+            overflow: hidden;
+            /* box-shadow: 3px 5px 25px rgba(0,0,0,0.4); */
+        }
+        .slider-arrows {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0px 30px;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider-arrow {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .slider-arrow:hover {
+            background-color: rgba(255,255,255,0.7);
+            color: black;
+        }
+        .slider-item-holder {
+            position: absolute;
+            width: 300%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(0);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            transition: transform 0.2s ease-out;
+            will-change: transform;
+        }
+        .slider-item {
+            width: calc(33.3% + 5px);
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f1f1f1;
+        }
+        .slider-item-image {
+            background-size: cover;
+            width: 30%;
+            min-width: 200px;
+            height: 100%;
+        }
+        .slider-item-info {
+            padding: 20px;
+        }
+        .slider-item-info-title {
+            font-size: calc(22px + 1vw);
+            font-weight: 800;
+            color: rgba(0,0,0,0.8);
+        }
+        .slider-item-info-subtitle {
+            font-size: calc(15px + 0.2vw);
+            color: rgba(0,0,0,0.7);
+        }
+        @media screen and (max-width: 768px) {
+            .slider {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="info">
+            <div class="info-item media-links">
+                <div class="media-link"><i class="fab fa-facebook-f"></i></div>
+                <div class="media-link"><i class="fab fa-twitter"></i></div>
+                <div class="media-link"><i class="fas fa-envelope"></i></div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone" style="margin-right: 5px"></i>250-540-8860
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope" style="margin-right: 5px"></i>testemail@example.com
+            </div>
+        </div>
+        <div class="dropdown-icon">
+            <i class="fas fa-bars" onclick="toggleNavBar()"></i>
+        </div>
+        <nav class="nav-bar" id="nav-bar" extended="false">
+            <div class="nav-bar-logo"></div>
+            <a href="/" class="nav-bar-item selected-item"><span><span class="hover-holder">Home</span></span></a>
+            <div class="nav-bar-item menu-button">
+                <a href="/menu" style="color: inherit; text-decoration: none"><span class="hover-holder">Menu</span></a>
+                <div class="menu">
+                    <a class="menu-item" href="/menu#lunch">Lunch</a>
+                    <a class="menu-item" href="/menu#dinner">Dinner</a>
+                    <!-- <div class="menu-item">Lunch</div> -->
+                    <!-- <div class="menu-item">Dinner</div> -->
+                </div>
+            </div>
+            <a href="/about" class="nav-bar-item"><span><span class="hover-holder">About</span></span></a>
+            <a href="/contact" class="nav-bar-item"><span><span class="hover-holder">Contact</span></span></a>
+        </nav>
+    </header>
+    <main class="content">
+        <div class="landing-image">
+            <div class="landing-image-info">
+                <div class="landing-image-info-title">
+                    Seafood
+                </div>
+                <div class="landing-image-info-subtitle">
+                    Yeah. We make that. We make that well
+                </div>
+            </div>
+            <div class="call-to-action">
+                Book a Table Now
+            </div>
+        </div>
+        <div class="slider-view">
+            <div class="slider" id="slider" index="0">
+                <div class="slider-item-holder">
+                    <div class="slider-item">
+                        <div class="slider-item-image" style="background-image: url('/images/food1.jpg')">
+
+                        </div>
+                        <div class="slider-item-info">
+                            <div class="slider-item-info-title">
+                                Hey Look. Some Food.
+                            </div>
+                            <div class="slider-item-info-subtitle">
+                                This is some dope as fuck food, too. seriously, don't miss out
+                                on this. you'll regret it.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item" style="background-image: url('/images/food2.jpg')"></div>
+                    <div class="slider-item" style="background-image: url('/images/food3.jpg')"></div>
+                </div>
+                <div class="slider-arrows">
+                    <div class="slider-arrow" onclick="scrollSliderLeft()"><i class="fas fa-caret-left" style="padding-right: 7px"></i></div>
+                    <div class="slider-arrow" onclick="scrollSliderRight()"><i class="fas fa-caret-right" style="padding-left: 4px"></i></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-social-media">
+            <div class="footer-social-media-links">
+                <div class="footer-media-link"><i class="fab fa-facebook-f"></i></div>
+                <div class="footer-media-link"><i class="fab fa-twitter"></i></div>
+                <div class="footer-media-link"><i class="fas fa-envelope"></i></div>
+            </div>
+        </div>
+        <div class="footer-info">
+            <div class="footer-info-category">
+                <div class="footer-logo">
+
+                </div>
+            </div>
+            <div class="footer-info-category">
+                <div class="footer-info-category-header">
+                    <h4>CONTACT US</h4>
+                </div>
+                <div class="footer-info-category-body">
+                    Phone: 250-540-8860
+                    <br>
+                    <br>
+                    Fax: 250-112-2343
+                </div>
+            </div>
+            
+            <div class="footer-info-category">
+                <div class="footer-info-category-header">
+                    <h4>VISIT US</h4>
+                </div>
+                <div class="footer-info-category-body">
+                    <address>
+                        1843 39<sup>th</sup> street,<br>
+                        Armstrong, BC
+                    </address>
+                    <a href="/contact" class="address-link">Maps Directions</a>
+                </div>
+            </div>
+            <div class="footer-info-category">
+                <div class="footer-info-category-header">
+                    <h4>LUNCH</h4>
+                </div>
+                <div class="footer-info-category-body">
+                    <ul>
+                        <li>Fish</li>
+                        <li>Chips</li>
+                        <li>Houdini</li>
+                        <li>Dogs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-category">
+                <div class="footer-info-category-header">
+                    <h4>DINNER</h4>
+                </div>
+                <div class="footer-info-category-body">
+                    <ul>
+                        <li>Fish</li>
+                        <li>Chips</li>
+                        <li>Houdini</li>
+                        <li>Dogs</li>
+                        <li>Cats</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-email-container">
+            <div class="footer-email">
+                <h4>NEWSLETTER</h4>
+                <input type="email" class="email-subscribe-input" placeholder="Email...">
+                <button class="email-subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-maps">
+        
+        </div>
+        <div class="footer-copywrite">
+                &copy; Copywrite Skills Canada BC 2019. All Rights Reserved
+        </div>
+
+    </footer>
+</body>
+<script>
+    function scrollSliderLeft() {
+        let slider = document.getElementById("slider");
+        let sliderItems = slider.children[0];
+        let currentIndex = slider.getAttribute("index");
+        currentIndex = parseInt(currentIndex);
+        if (currentIndex > 0) {
+            sliderItems.style.transform = `translateX(-${(currentIndex-1)/sliderItems.children.length*100}%)`;
+            slider.setAttribute("index", currentIndex-1);
+        }
+    }
+    function scrollSliderRight() {
+        let slider = document.getElementById("slider");
+        let sliderItems = slider.children[0];
+        let currentIndex = slider.getAttribute("index");
+        currentIndex = parseInt(currentIndex);
+        if (currentIndex < sliderItems.children.length-1) {
+            sliderItems.style.transform = `translateX(-${(currentIndex+1)/sliderItems.children.length*100}%)`;
+            slider.setAttribute("index", currentIndex+1);
+        }
+    }
+    
+</script>
+</html>
